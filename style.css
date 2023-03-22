@@ -24,7 +24,10 @@ body{
   background-color: #E9E1DE
 }
 .c-5E254E{
-  color: #5E254E
+  color: #5E254E!important
+}
+.c-000{
+  color: #000!important
 }
 .font48{
   font-size: 48px;
@@ -53,6 +56,7 @@ body{
 h1, h2, h3, h4{
   color: #5E254E!important;
   font-family: 'Blindlight';
+  font-weight: bold!important;
 }
 .c-fff{
   color: #fff
@@ -70,7 +74,8 @@ h1.hp-title{
   bottom: 100px;
   left: 50%;
   transform: translate(-50%, -50%);
-  line-height: 100px
+  line-height: 100px;
+  font-weight: normal!important;
 }
 h1.hp-title span{
   padding-left: 150px
@@ -85,6 +90,9 @@ div#countdown{
   z-index: 1;
   position: relative;
   font-weight: 100
+}
+div#countdown p{
+  font-size: 50px
 }
 img.logo-bg.w-100 {
   position: relative;
@@ -109,7 +117,7 @@ img.geolocalizzazione, img.aereo, img.storyboard{
   width: 20px
 }
 .volti{
-  width: 250px;
+  width: 200px;
   position: absolute;
   top: 0;
   left: 0;
@@ -189,6 +197,7 @@ footer .bg-sl-lista{
   }
 
 
+
 }
 @media (max-width: 1200px) {
 
@@ -211,12 +220,9 @@ footer .bg-sl-lista{
   img.geolocalizzazione, img.aereo, img.storyboard{
     max-width: 250px
   }
-  /* .icoListaContainer {
-    width: 80px;
+  div#countdown p{
+    font-size: 25px
   }
-  .icoListaContainer img{
-    padding: 10px
-  } */
 
 
 }
