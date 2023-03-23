@@ -54,10 +54,10 @@ async function getLists() {
   }));
 }
 
-async function submitRsvp(nome, email, partecipa) {
+async function submitRsvp(nome, telefono, partecipa) {
   const formdata = new FormData();
   formdata.append("your-name", nome);
-  formdata.append("your-email", email);
+  formdata.append("your-tel", telefono);
   formdata.append("your-partecipa", partecipa);
 
   return await (
@@ -85,8 +85,11 @@ document.addEventListener("alpine:init", () => {
     nome: "",
     telefono: "",
     partecipa: "",
+    msg: "",
     submit() {
-      submitRsvp(this.nome, this.telefono, this.partecipa);
+      submitRsvp(this.nome, this.telefono, this.partecipa).then((rsvpResp) => {
+        this.msg = rsvpResp.message;
+      });
     },
   }));
 });
