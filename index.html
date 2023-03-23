@@ -208,17 +208,17 @@
             <div class="row">
               <div class="col bg-lista bg-sl-lista">
                 <h1 class="pb-5 text-center">RSVP</h1>
-                <form>
+                <form x-data="formRsvp" @submit.prevent="submit">
                   <div class="row mb-3">
                     <label for="inputNome" class="col-sm-2 col-form-label">Nome e Cognome</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputNome">
+                      <input type="text" class="form-control" id="inputNome" x-model="nome">
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputTel" class="col-sm-2 col-form-label">Telefono</label>
                     <div class="col-sm-10">
-                      <input type="tel" class="form-control" id="inputTel">
+                      <input type="tel" class="form-control" id="inputTel" x-model="telefono">
                     </div>
                   </div>
                   <fieldset class="row mb-3">
