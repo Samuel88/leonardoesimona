@@ -133,16 +133,14 @@
             <img src="images/geolocalizzasingolo.png" alt="" class="geolocalizzasingolo">
             <a href="https://www.google.com/maps/place/Via+di+Badia,+24,+56032+Buti+PI/@43.7342008,10.6064455,17z/data=!3m1!4b1!4m6!3m5!1s0x12d589a915d0bbb3:0x2bf99295e30e0e64!8m2!3d43.7342008!4d10.6086342!16s%2Fg%2F11jyn3tnl7">
               <p class="m-0 ms-2 wightThin">Via di Badia, 24, 56032 Buti PI</p>
-
             </a>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
+
 <div class="bg-E9E1DE pt-5 pb-5" id="gallery">
   <div class="container ">
     <div class="row ">
@@ -179,7 +177,6 @@
       <!-- <div class="col-6">
       <img src="images/esgalleria.png" alt="" class="galleria img-fluid">
     </div> -->
-
     </div>
     <div class="row d-none pt-5" id="form-auguri">
       <div class="col">
@@ -209,13 +206,36 @@
 </div>
 
 <!-- Lista Nozze -->
-<div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze">
+<div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze" x-data>
   <div class="container ">
     <div class="row">
       <div class="col-12 text-center p-5">
         <h1>Lista di nozze </h1>
         <img src="images/aereo.png" alt="" class="aereo img-fluid">
       </div>
+
+      <template x-for="weddingList in $store.weddingLists.data" :key="weddingList.id">
+        <div class="col-sm-4 col-12 bg-faf6f7">
+          <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
+            <div class="col-sm-12 col-8 p-3">
+              <div class="">
+                <img :src="weddingList.immagine" alt="" class="img-fluid">
+              </div>
+              <div class=" bg-D6C4C0 p-3 text-center">
+                <h2 class="pt-4 font45 c-000" x-text="weddingList.titolo"></h2>
+                <p class="c-5E254E" x-text="weddingList.sottotitolo"></p>
+              </div>
+            </div>
+            <div class="col-sm-12 col-4">
+              <div class="icoListaContainer text-center mt-3 mb-3">
+                <img :src="weddingList.icona" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!--
       <div class="col-sm-4 col-12 bg-faf6f7">
         <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
           <div class="col-sm-12 col-8 p-3">
@@ -270,6 +290,8 @@
           </div>
         </div>
       </div>
+      -->
+
     </div>
   </div>
 </div>

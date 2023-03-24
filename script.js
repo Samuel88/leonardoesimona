@@ -70,13 +70,14 @@ const API_URL = "https://www.el-giorno-gioviale.it";
 
 async function getLists() {
   const json = await (
-    await fetch(`${API_URL}/wp-json/wp/v2/lists`)
+    await fetch(`${API_URL}/wp-json/wp/v2/wedding-lists?acf_format=standard&_embed`)
   ).json();
   return json.map((list) => ({
     id: list.id,
     titolo: list.title.rendered,
-    sottotitolo: list.meta.sottotitolo,
-    immagine: list.meta.immagine,
+    sottotitolo: list.acf.sottotitolo,
+    icona: list.acf.icona,
+    immagine: list._embedded['wp:featuredmedia']['0'].source_url,
   }));
 }
 
@@ -126,16 +127,15 @@ async function submitAuguri({nome, messaggio}) {
 }
 
 document.addEventListener("alpine:init", () => {
-  /*
-  Alpine.store("lists", {
+  Alpine.store("weddingLists", {
     data: [],
     init() {
       getLists().then((data) => {
+        console.log(data);
         this.data = data;
       });
     },
   });
-  */
 
   Alpine.data("formRsvp", () => ({
     nome: '',
