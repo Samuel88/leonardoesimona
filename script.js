@@ -1,19 +1,19 @@
 // Imposta la data di fine del countdown
-var countDownDate = new Date("Jun 8, 2023 16:00:00").getTime();
+const countDownDate = new Date("Jun 8, 2023 16:00:00").getTime();
 
 // Aggiorna il countdown ogni secondo
-var x = setInterval(function () {
+const x = setInterval(function () {
   // Ottieni la data e l'ora correnti
-  var now = new Date().getTime();
+  const now = new Date().getTime();
 
   // Calcola la differenza tra la data di fine del countdown e la data corrente
-  var distance = countDownDate - now;
+  const distance = countDownDate - now;
 
   // Calcola i giorni, le ore, i minuti e i secondi rimanenti
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Mostra il countdown nella pagina HTML
   document.getElementById("countdown").innerHTML =
@@ -38,7 +38,7 @@ var x = setInterval(function () {
 }, 1000);
 
 function clickAuguri() {
-  var element = document.getElementById("form-auguri");
+  const element = document.getElementById("form-auguri");
   element.classList.toggle("d-none");
 }
 
@@ -66,11 +66,11 @@ window.addEventListener('scroll', () => {
 //
 // Alpine
 //
-const API_URL = "https://temiwordpress.httdev.it";
+const API_URL = "https://www.el-giorno-gioviale.it";
 
 async function getLists() {
   const json = await (
-    await fetch(`${API_URL}/test/wp-json/wp/v2/lists`)
+    await fetch(`${API_URL}/wp-json/wp/v2/lists`)
   ).json();
   return json.map((list) => ({
     id: list.id,
@@ -80,15 +80,43 @@ async function getLists() {
   }));
 }
 
-async function submitRsvp(nome, telefono, partecipa) {
+async function submitRsvp({
+                            nome,
+                            email,
+                            telefono,
+                            conchi,
+                            intolleranze,
+                            conferma
+                          }) {
+  const RSVP_ENDPOINT = `${API_URL}/wp-json/contact-form-7/v1/contact-forms/8/feedback`;
   const formdata = new FormData();
   formdata.append("your-name", nome);
+  formdata.append("your-email", email);
   formdata.append("your-tel", telefono);
-  formdata.append("your-partecipa", partecipa);
+  formdata.append("your-conchi", conchi);
+  formdata.append("your-intolleranze", intolleranze);
+  formdata.append("your-conferma", conferma);
 
   return await (
     await fetch(
-      `${API_URL}/test/wp-json/contact-form-7/v1/contact-forms/12/feedback`,
+      RSVP_ENDPOINT,
+      {
+        method: "POST",
+        body: formdata,
+      }
+    )
+  ).json();
+}
+
+async function submitAuguri({nome, messaggio}) {
+  const AUGURI_ENDPOINT = `${API_URL}/wp-json/contact-form-7/v1/contact-forms/5/feedback`;
+  const formdata = new FormData();
+  formdata.append("your-name", nome);
+  formdata.append("your-messaggio", messaggio);
+
+  return await (
+    await fetch(
+      AUGURI_ENDPOINT,
       {
         method: "POST",
         body: formdata,
@@ -98,6 +126,7 @@ async function submitRsvp(nome, telefono, partecipa) {
 }
 
 document.addEventListener("alpine:init", () => {
+  /*
   Alpine.store("lists", {
     data: [],
     init() {
@@ -106,15 +135,40 @@ document.addEventListener("alpine:init", () => {
       });
     },
   });
+  */
 
   Alpine.data("formRsvp", () => ({
-    nome: "",
-    telefono: "",
-    partecipa: "",
+    nome: '',
+    email: '',
+    telefono: '',
+    conchi: '',
+    intolleranze: '',
+    conferma: "",
     msg: "",
     submit() {
-      submitRsvp(this.nome, this.telefono, this.partecipa).then((rsvpResp) => {
+      submitRsvp({
+        nome: this.nome,
+        email: this.email,
+        telefono: this.telefono,
+        conchi: this.conchi,
+        intolleranze: this.intolleranze,
+        conferma: this.conferma,
+      }).then((rsvpResp) => {
         this.msg = rsvpResp.message;
+      });
+    },
+  }));
+
+  Alpine.data("formAuguri", () => ({
+    nome: "",
+    messaggio: "",
+    msg: "",
+    submit() {
+      submitRsvp({
+        nome: this.nome,
+        messaggio: this.messaggio
+      }).then((auguriResp) => {
+        this.msg = auguriResp.message;
       });
     },
   }));

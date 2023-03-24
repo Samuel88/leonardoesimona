@@ -183,18 +183,17 @@
     </div>
     <div class="row d-none pt-5" id="form-auguri">
       <div class="col">
-        <form>
+        <form x-data="formAuguri" @submit.prevent="submit">
           <div class="row mb-3">
-            <label for="inputNomeAuguri" class="col-sm-2 col-form-label">Nome e Cognome</label>
+            <label for="nome" class="col-sm-2 col-form-label">Nome e Cognome</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputNomeAuguri">
+              <input type="text" class="form-control" x-model="nome" id="nome">
             </div>
           </div>
           <div class="row mb-3">
-            <label for="auguri" class="col-sm-2 col-form-label">Messaggio di auguri</label>
+            <label for="messaggio" class="col-sm-2 col-form-label">Messaggio di auguri</label>
             <div class="col-sm-10">
-                  <textarea name="name" rows="8" cols="80" id="auguri" class="form-control">
-
+                  <textarea name="name" rows="8" cols="80" x-model="messaggio" id="messaggio" class="form-control">
                   </textarea>
             </div>
           </div>
@@ -204,13 +203,13 @@
             </div>
           </div>
         </form>
-
       </div>
     </div>
   </div>
 </div>
-<div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze">
 
+<!-- Lista Nozze -->
+<div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze">
   <div class="container ">
     <div class="row">
       <div class="col-12 text-center p-5">
@@ -272,9 +271,15 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
+<!-- RSVP -->
+Nome *
+Email *
+Chi verrà insieme a te?
+Eventuali intolleranze, allergie o preferenze
+Conferma box* SI NO
 <div class="bg-E9E1DE pt-5 pb-5" id="rsvp">
   <div class="container  pb-5 pt-5 rsvp">
     <div class="row">
@@ -290,25 +295,45 @@
                 </div>
               </div>
               <div class="row mb-3">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="inputEmail" x-model="email">
+                </div>
+              </div>
+              <div class="row mb-3">
                 <label for="inputTel" class="col-sm-2 col-form-label">Telefono</label>
                 <div class="col-sm-10">
                   <input type="tel" class="form-control" id="inputTel" x-model="telefono">
                 </div>
               </div>
+              <div class="row mb-3">
+                <label for="conchi" class="col-sm-2 col-form-label">Chi verrà insieme a te?</label>
+                <div class="col-sm-10">
+                  <textarea name="name" rows="8" cols="80" x-model="conchi" id="conchi" class="form-control">
+                  </textarea>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="intolleranze" class="col-sm-2 col-form-label">Eventuali Intolleranze/Allergie/Preferenze</label>
+                <div class="col-sm-10">
+                  <textarea name="name" rows="8" cols="80" x-model="intolleranze" id="intolleranze" class="form-control">
+                  </textarea>
+                </div>
+              </div>
               <fieldset class="row mb-3">
-                <legend class="col-form-label col-sm-2 pt-0">Puoi partecipare?</legend>
+                <legend class="col-form-label col-sm-2 pt-0">Conferma</legend>
                 <div class="col-sm-10 d-flex">
                   <div class="form-check me-3">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
-                           value="option1">
-                    <label class="form-check-label" for="gridRadios1">
+                    <input class="form-check-input" type="radio" name="conferma" id="confermaSi"
+                           value="SI" x-model="conferma">
+                    <label class="form-check-label" for="confermaSi">
                       Si
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
-                           value="option2">
-                    <label class="form-check-label" for="gridRadios2">
+                    <input class="form-check-input" type="radio" name="conferma" id="confermaNo"
+                           value="NO" x-model="conferma">
+                    <label class="form-check-label" for="confermaNo">
                       No
                     </label>
                   </div>
@@ -325,8 +350,9 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<!-- Storyboard -->
 <div class="bg-E9E1DE pt-5 pb-5" id="storyboard">
   <div class="container  pb-5">
     <div class="row pb-5">
@@ -337,7 +363,13 @@
       </div>
       <div class="col-10 offset-1 bg-faf6f7 p-5 position-relative">
         <h1 class="text-center mb-3">Storyboard</h1>
-        <p class="pb-3">Condividi con noi i momenti del giorno del nostro matrimonio</p>
+        <p class="pb-3">
+          I ricordi di questo giorno [ cuoricino icona ] ...vorremmo portarli tutti con noi!
+          Sul sito https://wetransfer.com/,
+          puoi caricare le tue foto (/video) inserendo come indirizzo email del mittente,
+          il tuo indirizzo e come indirizzo del destinatario, l'indirizzo leonardoesimona@el-giorno-gioviale.it:
+          sarà bello guardarle, riguardarle e rivederle ancora... anche fino allo sfinimento :)
+        </p>
         <a href="mailto:leonardoesimona@el-giorno-gioviale.it"
            class="c-5E254E">leonardoesimona@el-giorno-gioviale.it</a>
         <div class="text-center icoListaContainer mt-4">
@@ -349,8 +381,8 @@
       </div>
     </div>
   </div>
-
 </div>
+
 <footer class="bg-faf6f7">
   <div class="bg-lista bg-sl-lista">
     <h2 class="text-center m-0">Grazie <br>Simona e Leonardo</h2>
