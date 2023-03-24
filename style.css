@@ -47,6 +47,9 @@ body{
 .font20{
   font-size: 20px;
 }
+.font30{
+  font-size: 30px;
+}
 .font12{
   font-size: 12px;
 }
@@ -79,6 +82,14 @@ h1.hp-title{
 }
 h1.hp-title span{
   padding-left: 150px
+}
+/* header */
+#navbarNav a{
+  color: #5E254E
+}
+
+.navbar-toggler, .navbar-toggler:focus{
+  border:1px solid #5E254E!important
 }
 /* hp */
 .logo{width: 130px}
@@ -121,7 +132,9 @@ img.geolocalizzazione, img.aereo, img.storyboard{
   position: absolute;
   top: 0;
   left: 0;
+  opacity: .6
 }
+#evento a{text-decoration: none}
 .bg-volti{
   background-image: url("images/sl-bg.png");
   background-position: center;
@@ -146,13 +159,23 @@ img.geolocalizzazione, img.aereo, img.storyboard{
   width: 80px;
   margin: auto;
 }
+img.letteraAuguri{
+  cursor: pointer;
+}
 .aereo, .storyboard{max-width: 400px}
-.icoListaContainer img{
-  width: 100%;
-  padding: 10px;
+
+.icoListaContainer, .icoAuguri {
   background: #fff;
   border: 1px solid #5E254E;
   border-radius: 50%
+
+}
+.icoAuguri img{
+  max-width: 80px
+}
+.icoListaContainer img, .icoAuguri img{
+  width: 100%;
+  padding: 10px;
 }
 .bg-sl-lista{
   background-image: url("images/sl-bg.png");
@@ -172,7 +195,7 @@ img.geolocalizzazione, img.aereo, img.storyboard{
   background-position: center;
 
 }
-button.btn {
+button.btn, button.btn:hover {
     background: #5E254E;
     color: #fff;
 }
@@ -223,6 +246,7 @@ footer .bg-sl-lista{
   div#countdown p{
     font-size: 25px
   }
+  .icoAuguri img{max-width: 60px}
 
 
 }
@@ -247,6 +271,9 @@ footer .bg-sl-lista{
   }
   .font20{
     font-size: 13px;
+  }
+  .font30{
+    font-size: 20px;
   }
   .font12{
     font-size: 8px;
