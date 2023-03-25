@@ -60,8 +60,7 @@
             <h1 class="hp-title">Simona e<br><span>Leonardo</span></h1>
           </div>
           <div class="col-3 d-sm-block d-none">
-            <h2 class="font48"> tre parole fighe e romantiche che racchiudono il vostro mood bla bla
-              bla</h2>
+            <h2 class="font48"> A Formentera c’è un eccesso di cielo, spiagge bianche e turchese che disarma e innamora. </h2>
           </div>
 
         </div>
@@ -81,7 +80,7 @@
         <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid">
       </div>
       <div class="col-5">
-        <h2>tre parole fighe e romantiche che racchiudono il vostro mood bla bla bla</h2>
+        <h2>A Formentera c’è un eccesso di cielo, spiagge bianche e turchese che disarma e innamora.</h2>
       </div>
     </div>
   </div>
@@ -145,7 +144,7 @@
   <div class="container ">
     <div class="row ">
       <div class="col-12 text-center p-3">
-        <h1>La nostra piccola parte di vita insieme.</h1>
+        <h1>La nostra parte di vita insieme.</h1>
       </div>
       <div class="col-md-4 col-6 order-md-0 p-2">
         <img src="images/simo_e_leo-09.webp" alt="" class="galleria img-fluid">
@@ -215,24 +214,27 @@
       </div>
 
       <template x-for="weddingList in $store.weddingLists.data" :key="weddingList.id">
-        <div class="col-sm-4 col-12 bg-faf6f7">
-          <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
-            <div class="col-sm-12 col-8 p-3">
-              <div class="">
-                <img :src="weddingList.immagine" alt="" class="img-fluid">
+          <div class="col-sm-3 col-12 bg-faf6f7">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRxSzVKW-H8w3P90Qp63_duTUqMV6RYhycf9FzdNsNwzCwvA/viewform?usp=pp_url" target="_blank" class="link-lista">
+            <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
+              <div class="col-sm-12 col-8 p-3">
+                <div class="">
+                  <img :src="weddingList.immagine" alt="" class="img-fluid">
+                </div>
+                <div class=" bg-D6C4C0 p-3 text-center">
+                  <h2 class="pt-4 font45 c-000" x-text="weddingList.titolo"></h2>
+                  <p class="c-5E254E" x-text="weddingList.sottotitolo"></p>
+                </div>
               </div>
-              <div class=" bg-D6C4C0 p-3 text-center">
-                <h2 class="pt-4 font45 c-000" x-text="weddingList.titolo"></h2>
-                <p class="c-5E254E" x-text="weddingList.sottotitolo"></p>
+              <div class="col-sm-12 col-4">
+                <div class="icoListaContainer text-center mt-3 mb-3">
+                  <img :src="weddingList.icona" alt="">
+                </div>
               </div>
             </div>
-            <div class="col-sm-12 col-4">
-              <div class="icoListaContainer text-center mt-3 mb-3">
-                <img :src="weddingList.icona" alt="">
-              </div>
-            </div>
+          </a>
           </div>
-        </div>
+
       </template>
 
       <!--

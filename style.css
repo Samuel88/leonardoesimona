@@ -91,6 +91,10 @@ h1.hp-title span{
 .navbar-toggler, .navbar-toggler:focus{
   border:1px solid #5E254E!important
 }
+button.navbar-toggler {
+    border-radius: 50%;
+    padding: 10px;
+}
 /* hp */
 .logo{width: 130px}
 div#countdown>div {
@@ -154,6 +158,9 @@ img.geolocalizzazione, img.aereo, img.storyboard{
 }
 .bg-timbri{
   background-image: url("images/timbriopachi.png");
+}
+.link-lista{
+  text-decoration: none;
 }
 .icoListaContainer{
   width: 80px;
