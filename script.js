@@ -68,13 +68,19 @@ window.addEventListener('scroll', () => {
 //
 const API_URL = "https://www.el-giorno-gioviale.it";
 
+function decodeEntity(inputStr) {
+  var textarea = document.createElement("textarea");
+  textarea.innerHTML = inputStr;
+  return textarea.value;
+}
+
 async function getLists() {
   const json = await (
     await fetch(`${API_URL}/wp-json/wp/v2/wedding-lists?acf_format=standard&_embed&per_page=100`)
   ).json();
   return json.map((list) => ({
     id: list.id,
-    titolo: list.title.rendered,
+    titolo: decodeEntity(list.title.rendered),
     sottotitolo: list.acf.sottotitolo,
     icona: list.acf.icona,
     form: list.acf.form,
