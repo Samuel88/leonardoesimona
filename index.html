@@ -215,7 +215,7 @@
 
       <template x-for="weddingList in $store.weddingLists.data" :key="weddingList.id">
           <div class="col-sm-3 col-12 bg-faf6f7">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScRxSzVKW-H8w3P90Qp63_duTUqMV6RYhycf9FzdNsNwzCwvA/viewform?usp=pp_url" target="_blank" class="link-lista">
+            <a :href="weddingList.form" target="_blank" class="link-lista">
             <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
               <div class="col-sm-12 col-8 p-3">
                 <div class="">
@@ -234,66 +234,7 @@
             </div>
           </a>
           </div>
-
       </template>
-
-      <!--
-      <div class="col-sm-4 col-12 bg-faf6f7">
-        <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
-          <div class="col-sm-12 col-8 p-3">
-            <div class="">
-              <img src="images/listanozzemaldive.webp" alt="" class="img-fluid">
-            </div>
-            <div class=" bg-D6C4C0 p-3 text-center">
-              <h2 class="pt-4 font45 c-000">Volo SudAfrica</h2>
-              <p class="c-5E254E">Regalaci un tratta di viaggio</p>
-            </div>
-          </div>
-          <div class="col-sm-12 col-4">
-            <div class="icoListaContainer text-center mt-3 mb-3">
-              <img src="images/mappamondo2.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 col-12 bg-faf6f7 mt-md-0 mt-5">
-        <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
-          <div class="col-sm-12 col-4 order-sm-2 order-1">
-            <div class="icoListaContainer text-center mt-3 mb-3">
-              <img src="images/spiaggia.png" alt="">
-            </div>
-          </div>
-          <div class="col-sm-12 col-8 p-3">
-            <div class="">
-              <img src="images/listanozzevoloaereo.webp" alt="" class="img-fluid">
-            </div>
-            <div class=" bg-D6C4C0 p-3 text-center">
-              <h2 class="pt-4 font45 c-000">Volo SudAfrica</h2>
-              <p class="c-5E254E">Regalaci un tratta di viaggio</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 col-12 bg-faf6f7 mt-md-0 mt-5">
-        <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
-          <div class="col-sm-12 col-8 p-3">
-            <div class="">
-              <img src="images/listanozzecenaromantica.webp" alt="" class="img-fluid">
-            </div>
-            <div class=" bg-D6C4C0 p-3 text-center">
-              <h2 class="pt-4 font45 c-000">Volo SudAfrica</h2>
-              <p class="c-5E254E">Regalaci un tratta di viaggio</p>
-            </div>
-          </div>
-          <div class="col-sm-12 col-4">
-            <div class="icoListaContainer text-center mt-3 mb-3">
-              <img src="images/passaporto2.png" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-
     </div>
   </div>
 </div>

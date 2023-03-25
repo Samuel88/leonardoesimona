@@ -70,13 +70,14 @@ const API_URL = "https://www.el-giorno-gioviale.it";
 
 async function getLists() {
   const json = await (
-    await fetch(`${API_URL}/wp-json/wp/v2/wedding-lists?acf_format=standard&_embed`)
+    await fetch(`${API_URL}/wp-json/wp/v2/wedding-lists?acf_format=standard&_embed&per_page=100`)
   ).json();
   return json.map((list) => ({
     id: list.id,
     titolo: list.title.rendered,
     sottotitolo: list.acf.sottotitolo,
     icona: list.acf.icona,
+    form: list.acf.form,
     immagine: list._embedded['wp:featuredmedia']['0'].source_url,
   }));
 }
