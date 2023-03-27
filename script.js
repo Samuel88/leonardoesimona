@@ -167,6 +167,7 @@ document.addEventListener("alpine:init", () => {
   }));
 
   Alpine.data("formAuguri", () => ({
+    show: false,
     nome: "",
     messaggio: "",
     msg: "",

@@ -1,75 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
 @font-face {
-  src: url('fonts/blindlight.regular.ttf');
+  src: url("fonts/blindlight.regular.ttf");
   font-weight: normal;
-  font-family: 'Blindlight';
+  font-family: "Blindlight";
 }
 /* GENERAL */
 
-body{
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif!important;
-  color: #000!important
+  font-family: "Lato", sans-serif !important;
+  color: #000 !important;
 }
 
-.bg-D6C4C0{
-  background-color: #D6C4C0
+.bg-D6C4C0 {
+  background-color: #d6c4c0;
 }
-.bg-faf6f7{
-  background-color: #faf6f7
+.bg-faf6f7 {
+  background-color: #faf6f7;
 }
-.bg-E9E1DE{
-  background-color: #E9E1DE
+.bg-E9E1DE {
+  background-color: #e9e1de;
 }
-.c-5E254E{
-  color: #5E254E!important
+.c-5E254E {
+  color: #5e254e !important;
 }
-.c-000{
-  color: #000!important
+.c-000 {
+  color: #000 !important;
 }
-.font48{
+.font48 {
   font-size: 48px;
 }
-.font40{
+.font40 {
   font-size: 40px;
 }
-.font45{
+.font45 {
   font-size: 45px;
 }
-.font55{
+.font55 {
   font-size: 55px;
 }
-.font50{
+.font50 {
   font-size: 50px;
 }
-.font20{
+.font20 {
   font-size: 20px;
 }
-.font30{
+.font30 {
   font-size: 30px;
 }
-.font12{
+.font12 {
   font-size: 12px;
 }
-.wightThin{
-  font-weight: 100
+.wightThin {
+  font-weight: 100;
 }
-h1, h2, h3, h4{
-  color: #5E254E!important;
-  font-family: 'Blindlight';
-  font-weight: bold!important;
+h1,
+h2,
+h3,
+h4 {
+  color: #5e254e !important;
+  font-family: "Blindlight";
+  font-weight: bold !important;
 }
-.c-fff{
-  color: #fff
+.c-fff {
+  color: #fff;
 }
-a{
-  color: unset!important
+a {
+  color: unset !important;
 }
-body h1{
-  font-size: 75px
+body h1 {
+  font-size: 75px;
 }
+/*
 h1.hp-title{
   color: #fff!important;
   font-size: 180px;
@@ -83,41 +87,69 @@ h1.hp-title{
 h1.hp-title span{
   padding-left: 150px
 }
-/* header */
-#navbarNav a{
-  color: #5E254E
+*/
+.hp-title-container {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  width: 75%;
 }
 
-.navbar-toggler, .navbar-toggler:focus{
-  border:1px solid #5E254E!important
+.hp-title {
+  font-family: "Blindlight";
+  color: #fff !important;
+  font-size: 15vw;
+}
+
+@media (min-width: 768px) {
+  .hp-title {
+    font-size: 5vw;
+  }
+}
+
+
+/* header */
+#navbarNav a {
+  color: #5e254e;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus {
+  border: 1px solid #5e254e !important;
 }
 button.navbar-toggler {
-    border-radius: 50%;
-    padding: 10px;
+  border-radius: 50%;
+  padding: 10px;
 }
 /* hp */
-.logo{width: 130px}
-div#countdown>div {
-    border-right: 2px solid #5E254E;
-    min-width: 90px;
+.logo {
+  width: 130px;
 }
-div#countdown{
+div#countdown > div {
+  border-right: 2px solid #5e254e;
+  min-width: 90px;
+}
+div#countdown {
   z-index: 1;
   position: relative;
-  font-weight: 100
+  font-weight: 100;
 }
-div#countdown p{
-  font-size: 50px
+div#countdown p {
+  font-size: 50px;
 }
 img.logo-bg.w-100 {
   position: relative;
   top: -50px;
 }
-img.geolocalizzazione, img.aereo, img.storyboard{
-  max-width: 300px
+img.geolocalizzazione,
+img.aereo,
+img.storyboard {
+  max-width: 300px;
 }
-.card-evento
-.icoEventoContainer{
+.card-evento .icoEventoContainer {
   position: absolute;
   left: 50%;
   top: 0;
@@ -125,171 +157,169 @@ img.geolocalizzazione, img.aereo, img.storyboard{
   background: #fff;
   border-radius: 50%;
 }
-.icoEventoContainer img{
-  width: 50px
+.icoEventoContainer img {
+  width: 50px;
 }
-.geolocalizzasingolo{
-  width: 20px
+.geolocalizzasingolo {
+  width: 20px;
 }
-.volti{
+.volti {
   width: 200px;
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .6
+  opacity: 0.6;
 }
-#evento a{text-decoration: none}
-.bg-volti{
+#evento a {
+  text-decoration: none;
+}
+.bg-volti {
   background-image: url("images/sl-bg.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.cuorecontinuo{
+.cuorecontinuo {
   position: absolute;
   left: 1rem;
   bottom: 1rem;
-  width: 150px
+  width: 150px;
 }
-.bg-lista{
+.bg-lista {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.bg-timbri{
+.bg-timbri {
   background-image: url("images/timbriopachi.png");
 }
-.link-lista{
+.link-lista {
   text-decoration: none;
 }
-.icoListaContainer{
+.icoListaContainer {
   width: 80px;
   margin: auto;
 }
-img.letteraAuguri{
+img.letteraAuguri {
   cursor: pointer;
 }
-.aereo, .storyboard{max-width: 400px}
+.aereo,
+.storyboard {
+  max-width: 400px;
+}
 
-.icoListaContainer, .icoAuguri {
+.icoListaContainer,
+.icoAuguri {
   background: #fff;
-  border: 1px solid #5E254E;
-  border-radius: 50%
-
+  border: 1px solid #5e254e;
+  border-radius: 50%;
 }
-.icoAuguri img{
-  max-width: 80px
+.icoAuguri img {
+  max-width: 80px;
 }
-.icoListaContainer img, .icoAuguri img{
+.icoListaContainer img,
+.icoAuguri img {
   width: 100%;
   padding: 10px;
 }
-.bg-sl-lista{
+.bg-sl-lista {
   background-image: url("images/sl-bg.png");
   background-size: 350px;
   background-position: left;
 }
 .negativi-container {
-    position: absolute;
-    width: 100px;
-    bottom: -20px;
-    right: -20px;
+  position: absolute;
+  width: 100px;
+  bottom: -20px;
+  right: -20px;
 }
-.negativi-container img{
-  width: 120%
+.negativi-container img {
+  width: 120%;
 }
-.rsvp .bg-sl-lista{
+.rsvp .bg-sl-lista {
   background-position: center;
-
 }
-button.btn, button.btn:hover {
-    background: #5E254E;
-    color: #fff;
+button.btn,
+button.btn:hover {
+  background: #5e254e;
+  color: #fff;
 }
-footer h2{
-  font-size: 40px
+footer h2 {
+  font-size: 40px;
 }
-footer .bg-sl-lista{
+footer .bg-sl-lista {
   background-position: center;
   background-size: 100px;
-
 }
 
 /* MEDIA QUERY */
 
 @media (min-width: 768px) {
-  footer h2{
-    font-size: 75px
+  footer h2 {
+    font-size: 75px;
   }
   footer .bg-sl-lista {
     background-size: 150px;
-
   }
-
-
-
 }
 @media (max-width: 1200px) {
-
 }
 @media (max-width: 1024px) {
-  h1.hp-title{
+  h1.hp-title {
     font-size: 75px;
     line-height: 80px;
-    bottom: 0
+    bottom: 0;
   }
-  h1.hp-title span{
-    padding-left: 50px
+  h1.hp-title span {
+    padding-left: 50px;
   }
-
 }
 @media (max-width: 768px) {
   img.volti {
     max-width: 80px;
   }
-  img.geolocalizzazione, img.aereo, img.storyboard{
-    max-width: 250px
+  img.geolocalizzazione,
+  img.aereo,
+  img.storyboard {
+    max-width: 250px;
   }
-  div#countdown p{
-    font-size: 25px
-  }
-  .icoAuguri img{max-width: 60px}
-
-
-}
-@media (max-width: 767px) {
-  body h1{
-    font-size: 40px
-  }
-  .font48{
-    font-size: 20px;
-  }
-  .font40{
+  div#countdown p {
     font-size: 25px;
   }
-  .font45{
-    font-size: 28px;
+  .icoAuguri img {
+    max-width: 60px;
   }
-  .font55{
-    font-size: 36px;
+}
+@media (max-width: 767px) {
+  body h1 {
+    font-size: 40px;
   }
-  .font50{
-    font-size: 30px;
-  }
-  .font20{
-    font-size: 13px;
-  }
-  .font30{
+  .font48 {
     font-size: 20px;
   }
-  .font12{
+  .font40 {
+    font-size: 25px;
+  }
+  .font45 {
+    font-size: 28px;
+  }
+  .font55 {
+    font-size: 36px;
+  }
+  .font50 {
+    font-size: 30px;
+  }
+  .font20 {
+    font-size: 13px;
+  }
+  .font30 {
+    font-size: 20px;
+  }
+  .font12 {
     font-size: 8px;
   }
-  div.card-evento{
+  div.card-evento {
     width: 90%;
     margin: auto;
   }
-
-
-
 }

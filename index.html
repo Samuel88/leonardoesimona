@@ -56,9 +56,28 @@
           <div class="col-3 d-sm-block d-none">
             <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid">
           </div>
-          <div class="col-sm-6 col-12 text-center position-relative">
-            <img src="images/simo_e_leo-56.webp" alt="" class="img-fluid">
-            <h1 class="hp-title">Simona e<br><span>Leonardo</span></h1>
+          <div class="col-sm-6 col-12 text-center">
+            <div class="position-relative">
+              <img src="images/simo_e_leo-56.webp" alt="" class="img-fluid">
+              <div class="d-flex flex-column hp-title-container">
+                <strong class="align-self-start hp-title">
+                  Simona
+                </strong>
+                <strong class="align-self-center hp-title">
+                  e
+                </strong>
+                <strong class="align-self-end hp-title">
+                  Leonardo
+                </strong>
+              </div>
+            </div>
+            <!--
+            <h1 class="hp-title">
+              Simona<br/>
+              e<br/>
+              <span>Leonardo</span>
+            </h1>
+            -->
           </div>
           <div class="col-3 d-sm-block d-none">
             <h2 class="font48"> A Formentera c’è un eccesso di cielo, spiagge bianche e turchese che disarma e innamora. </h2>
@@ -251,30 +270,30 @@
               <div class="row mb-3">
                 <label for="inputNome" class="col-sm-2 col-form-label">Nome e Cognome</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputNome" x-model="nome">
+                  <input type="text" class="form-control" id="inputNome" x-model="nome" required>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <label for="inputEmail" class="col-sm-2 col-form-label text-break">Email</label>
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail" x-model="email">
+                  <input type="email" class="form-control" id="inputEmail" x-model="email" required>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputTel" class="col-sm-2 col-form-label">Telefono</label>
+                <label for="inputTel" class="col-sm-2 col-form-label text-break">Telefono</label>
                 <div class="col-sm-10">
-                  <input type="tel" class="form-control" id="inputTel" x-model="telefono">
+                  <input type="tel" class="form-control" id="inputTel" x-model="telefono" required>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="conchi" class="col-sm-2 col-form-label">Chi verrà insieme a te?</label>
+                <label for="conchi" class="col-sm-2 col-form-label text-break">Chi verrà insieme a te?</label>
                 <div class="col-sm-10">
                   <textarea name="name" rows="8" cols="80" x-model="conchi" id="conchi" class="form-control">
                   </textarea>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="intolleranze" class="col-sm-2 col-form-label">Eventuali Intolleranze/Allergie/Preferenze</label>
+                <label for="intolleranze" class="col-sm-2 col-form-label text-break">Eventuali Intolleranze/Allergie/Preferenze</label>
                 <div class="col-sm-10">
                   <textarea name="name" rows="8" cols="80" x-model="intolleranze" id="intolleranze" class="form-control">
                   </textarea>
