@@ -104,7 +104,7 @@ h1.hp-title span{
   font-size: 15vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .hp-title {
     font-size: 5vw;
   }
@@ -144,11 +144,15 @@ img.logo-bg.w-100 {
   position: relative;
   top: -50px;
 }
+
+/*
 img.geolocalizzazione,
 img.aereo,
 img.storyboard {
   max-width: 300px;
 }
+*/
+
 .card-evento .icoEventoContainer {
   position: absolute;
   left: 50%;
@@ -210,6 +214,7 @@ img.letteraAuguri {
 
 .icoListaContainer,
 .icoAuguri {
+  max-width: 100%;
   background: #fff;
   border: 1px solid #5e254e;
   border-radius: 50%;
@@ -278,11 +283,13 @@ footer .bg-sl-lista {
   img.volti {
     max-width: 80px;
   }
+  /*
   img.geolocalizzazione,
   img.aereo,
   img.storyboard {
     max-width: 250px;
   }
+  */
   div#countdown p {
     font-size: 25px;
   }
