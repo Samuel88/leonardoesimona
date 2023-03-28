@@ -88,6 +88,16 @@ async function getLists() {
   }));
 }
 
+// Risposta OK
+// {
+//   "contact_form_id": 8,
+//   "status": "mail_sent",
+//   "message": "Grazie per il tuo messaggio. È stato inviato.",
+//   "posted_data_hash": "a48022ff9c6f3a219c8e93f4d09c9fd0",
+//   "into": "#",
+//   "invalid_fields": []
+// }
+
 async function submitRsvp({
                             nome,
                             email,
