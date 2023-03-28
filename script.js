@@ -200,3 +200,12 @@ document.addEventListener("alpine:init", () => {
     },
   }));
 });
+
+
+document.addEventListener('click', function (event) {
+  const menu = document.querySelector('.navbar-collapse');
+
+  if (menu.classList.contains('show') && !menu.contains(event.target)) {
+    menu.classList.remove('show');
+  }
+});
