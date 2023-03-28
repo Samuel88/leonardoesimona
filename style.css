@@ -108,6 +108,13 @@ h1.hp-title span{
   .hp-title {
     font-size: 5vw;
   }
+  div#countdown > div {
+    border-right: 2px solid #5e254e;
+  }
+  div#countdown > div:last-child {
+    border: none
+  }
+
 }
 
 
@@ -129,7 +136,6 @@ button.navbar-toggler {
   width: 130px;
 }
 div#countdown > div {
-  border-right: 2px solid #5e254e;
   min-width: 90px;
 }
 div#countdown {

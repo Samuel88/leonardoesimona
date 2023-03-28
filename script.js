@@ -17,16 +17,16 @@ const x = setInterval(function () {
 
   // Mostra il countdown nella pagina HTML
   document.getElementById("countdown").innerHTML =
-    '<div class="col-auto"><p class="m-0">' +
+    '<div class="col-sm-auto col-12"><p class="m-0">' +
     days +
     "</p> <span>GIORNI</span></div>" +
-    '<div class="col-auto"><p class="m-0">' +
+    '<div class="col-sm-auto col-12"><p class="m-0">' +
     hours +
     "</p> <span>ORE</span></div>" +
-    '<div class="col-auto"><p class="m-0">' +
+    '<div class="col-sm-auto col-12"><p class="m-0">' +
     minutes +
     "</p> <span>MINUTI</span></div>" +
-    '<div class="col-auto"><p class="m-0">' +
+    '<div class="col-sm-auto col-12"><p class="m-0">' +
     seconds +
     "</p> <span>SECONDI</span></div>";
 
