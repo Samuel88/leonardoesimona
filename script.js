@@ -105,7 +105,7 @@ async function submitRsvp({
   formdata.append("your-intolleranze", intolleranze);
   formdata.append("your-conferma", conferma);
 
-  return await (
+  const cf7Response = await (
     await fetch(
       RSVP_ENDPOINT,
       {
@@ -114,6 +114,12 @@ async function submitRsvp({
       }
     )
   ).json();
+
+  if (cf7Response?.status === 'mail_sent') {
+    return cf7Response?.message;
+  } else {
+    throw new Error(cf7Response.message);
+  }
 }
 
 async function submitAuguri({nome, messaggio}) {
@@ -151,7 +157,8 @@ document.addEventListener("alpine:init", () => {
     conchi: '',
     intolleranze: '',
     conferma: "",
-    msg: "",
+    msg: '',
+    msgErr: '',
     submit() {
       submitRsvp({
         nome: this.nome,
@@ -160,9 +167,11 @@ document.addEventListener("alpine:init", () => {
         conchi: this.conchi,
         intolleranze: this.intolleranze,
         conferma: this.conferma,
-      }).then((rsvpResp) => {
-        this.msg = rsvpResp.message;
-      });
+      }).then(msg => {
+        this.msg = msg;
+      }, (msgErr => {
+        this.msgErr = msgErr;
+      }));
     },
   }));
 

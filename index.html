@@ -1,399 +1,584 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>el giorno gioviale</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-</head>
-<body>
-
-  <!-- Header -->
-<header class="bg-E9E1DE">
-  <div class="container-fluid">
-    <div class="row bg-faf6f7">
-      <div class="col text-center p-3">
-        <img src="images/logo.png" alt="" class="logo">
-      </div>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3 ">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#evento">Evento</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gallery">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#lista-nozze">Lista di nozze</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#rsvp">RSVP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#storyboard">Storyboard</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-<div class="bg-E9E1DE pt-5 pb-5" id="home">
-  <div class="container">
-    <div class="row bg-faf6f7">
-      <div class="col">
-        <div class="row d-flex align-items-center">
-          <div class="col-3 d-sm-block d-none">
-            <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>el giorno gioviale</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.3.0/css/all.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-E9E1DE">
+      <div class="container-fluid">
+        <div class="row bg-faf6f7">
+          <div class="col text-center p-3">
+            <img src="images/logo.png" alt="" class="logo" />
           </div>
-          <div class="col-sm-6 col-12 text-center">
-            <div class="position-relative">
-              <img src="images/simo_e_leo-56.webp" alt="" class="img-fluid">
-              <div class="d-flex flex-column hp-title-container">
-                <strong class="align-self-start hp-title">
-                  Simona
-                </strong>
-                <strong class="align-self-center hp-title">
-                  e
-                </strong>
-                <strong class="align-self-end hp-title">
-                  Leonardo
-                </strong>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#evento"
+                  >Evento</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#lista-nozze">Lista di nozze</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#rsvp">RSVP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#storyboard">Storyboard</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="bg-E9E1DE pt-5 pb-5" id="home">
+      <div class="container">
+        <div class="row bg-faf6f7">
+          <div class="col">
+            <div class="row d-flex align-items-center">
+              <div class="col-3 d-sm-block d-none">
+                <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid" />
+              </div>
+              <div class="col-sm-6 col-12 text-center">
+                <div class="position-relative">
+                  <img
+                    src="images/simo_e_leo-56.webp"
+                    alt=""
+                    class="img-fluid"
+                  />
+                  <div class="d-flex flex-column hp-title-container">
+                    <strong class="align-self-start hp-title"> Simona </strong>
+                    <strong class="align-self-center hp-title"> e </strong>
+                    <strong class="align-self-end hp-title"> Leonardo </strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-3 d-sm-block d-none">
+                <h2 class="font48 text-break">
+                  A Formentera c’è un eccesso di cielo, spiagge bianche e
+                  turchese che disarma e innamora.
+                </h2>
               </div>
             </div>
           </div>
-          <div class="col-3 d-sm-block d-none">
-            <h2 class="font48 text-break">A Formentera c’è un eccesso di cielo, spiagge bianche e turchese che disarma e innamora. </h2>
+          <div class="col-12 text-center p-4 bg-E9E1DE">
+            <p class="font50 c-5E254E wightThin">8 GIUGNO 2023</p>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center pt-4 pb-4 bg-faf6f7">
+            <h2 class="font40">
+              Al nostro giorno. insieme a voi <br />manca sempre meno
+            </h2>
+            <div id="countdown" class="row justify-content-center"></div>
+          </div>
+        </div>
+        <div class="row d-flex align-items-center bg-E9E1DE d-sm-none d-block">
+          <div class="col-7">
+            <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid" />
+          </div>
+          <div class="col-5">
+            <h2 class="text-break">
+              A Formentera c’è un eccesso di cielo, spiagge bianche e turchese
+              che disarma e innamora.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-E9E1DE pt-5 pb-5" id="evento">
+      <div class="container">
+        <div class="row bg-E9E1DE">
+          <div class="col-12 text-center pt-4">
+            <h1 class="text-break">Evento</h1>
+            <img
+              src="images/timelineverticale2.png"
+              alt=""
+              class="img-fluid d-lg-none"
+            />
+            <img
+              src="images/timelineorizzontale2.png"
+              alt=""
+              class="img-fluid d-none d-lg-block"
+            />
+          </div>
+        </div>
+        <div class="row bg-E9E1DE">
+          <div class="col-12 text-center pt-4">
+            <img
+              src="images/geolocalizzazione.png"
+              alt=""
+              class="geolocalizzazione img-fluid"
+            />
+          </div>
+          <div class="col-sm-5 col-12 bg-faf6f7 p-3 mb-5 card-evento">
+            <div class="">
+              <img
+                src="images/chiesapievesmartino2.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="position-relative bg-D6C4C0 p-3 text-center">
+              <div class="icoEventoContainer p-3">
+                <img src="images/cuorecerimonia.png" alt="" />
+              </div>
+              <h2 class="mt-5 font55 c-000 text-break">Cerimonia</h2>
+              <p class="wightThin font20 m-0 c-5E254E">Pieve S.Martino</p>
+              <div class="d-flex align-items-center justify-content-center">
+                <img
+                  src="images/geolocalizzasingolo.png"
+                  alt=""
+                  class="geolocalizzasingolo"
+                />
+                <a
+                  href="https://www.google.com/maps/place/Via+della+Pieve,+56036+Palaia+PI/@43.607005,10.7724219,17z/data=!3m1!4b1!4m6!3m5!1s0x132a72ea62c68571:0xc775204b59b0550e!8m2!3d43.607005!4d10.7746106!16s%2Fg%2F119th3rj2"
+                  target="_blank"
+                >
+                  <p class="m-0 ms-2 wightThin">
+                    Via della Pieve, 56036 Palaia PI
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-5 offset-sm-2 col-12 bg-faf6f7 p-3 mb-5 card-evento"
+          >
+            <div class="">
+              <img
+                src="images/ricevimentovalledibadia.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+            <div class="position-relative bg-D6C4C0 p-3 text-center">
+              <div class="icoEventoContainer p-3">
+                <img src="images/tortanuziale.png" alt="" />
+              </div>
+              <h2 class="mt-5 font55 c-000 text-break">Ricevimento</h2>
+              <p class="wightThin font20 m-0 c-5E254E">Valle di Badia</p>
+              <div class="d-flex align-items-center justify-content-center">
+                <img
+                  src="images/geolocalizzasingolo.png"
+                  alt=""
+                  class="geolocalizzasingolo"
+                />
+                <a
+                  href="https://www.google.com/maps/place/Via+di+Badia,+24,+56032+Buti+PI/@43.7342008,10.6064455,17z/data=!3m1!4b1!4m6!3m5!1s0x12d589a915d0bbb3:0x2bf99295e30e0e64!8m2!3d43.7342008!4d10.6086342!16s%2Fg%2F11jyn3tnl7"
+                >
+                  <p class="m-0 ms-2 wightThin">
+                    Via di Badia, 24, 56032 Buti PI
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        </div>
-      </div>
-      <div class="col-12 text-center p-4 bg-E9E1DE">
-        <p class="font50 c-5E254E wightThin">8 GIUGNO 2023</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 text-center pt-4 pb-4 bg-faf6f7">
-        <h2 class="font40">Al nostro giorno. insieme a voi <br>manca sempre meno</h2>
-        <div id="countdown" class="row justify-content-center"></div>
-      </div>
-    </div>
-    <div class="row d-flex align-items-center bg-E9E1DE d-sm-none d-block">
-      <div class="col-7">
-        <img src="images/sl-bg.png" alt="" class="logo-bg img-fluid">
-      </div>
-      <div class="col-5">
-        <h2 class="text-break">A Formentera c’è un eccesso di cielo, spiagge bianche e turchese che disarma e innamora.</h2>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="bg-E9E1DE pt-5 pb-5" id="evento">
-  <div class="container">
-    <div class="row bg-E9E1DE">
-      <div class="col-12 text-center pt-4">
-        <h1 class="text-break">Evento</h1>
-        <img src="images/timelineverticale2.png" alt="" class="img-fluid d-lg-none">
-        <img src="images/timelineorizzontale2.png" alt="" class="img-fluid d-none d-lg-block ">
-      </div>
-    </div>
-    <div class="row bg-E9E1DE">
-      <div class="col-12 text-center pt-4 ">
-        <img src="images/geolocalizzazione.png" alt="" class="geolocalizzazione img-fluid">
-      </div>
-      <div class="col-sm-5 col-12 bg-faf6f7 p-3 mb-5 card-evento">
-        <div class="">
-          <img src="images/chiesapievesmartino2.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="position-relative bg-D6C4C0 p-3 text-center">
-          <div class="icoEventoContainer p-3">
-            <img src="images/cuorecerimonia.png" alt="">
+    <div class="bg-E9E1DE pt-5 pb-5" id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center p-3">
+            <h1 class="text-break">La nostra parte di vita insieme.</h1>
           </div>
-          <h2 class="mt-5 font55 c-000 text-break">Cerimonia</h2>
-          <p class="wightThin font20 m-0 c-5E254E">Pieve S.Martino</p>
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="images/geolocalizzasingolo.png" alt="" class="geolocalizzasingolo">
-            <a href="https://www.google.com/maps/place/Via+della+Pieve,+56036+Palaia+PI/@43.607005,10.7724219,17z/data=!3m1!4b1!4m6!3m5!1s0x132a72ea62c68571:0xc775204b59b0550e!8m2!3d43.607005!4d10.7746106!16s%2Fg%2F119th3rj2"
-               target="_blank">
-              <p class="m-0 ms-2 wightThin">Via della Pieve, 56036 Palaia PI</p>
-            </a>
+          <div class="col-md-4 col-6 order-md-0 p-2">
+            <img
+              src="images/simo_e_leo-09.webp"
+              alt=""
+              class="galleria img-fluid"
+            />
           </div>
-        </div>
-      </div>
-      <div class="col-sm-5 offset-sm-2 col-12 bg-faf6f7 p-3 mb-5 card-evento">
-        <div class="">
-          <img src="images/ricevimentovalledibadia.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="position-relative bg-D6C4C0 p-3 text-center">
-          <div class="icoEventoContainer p-3">
-            <img src="images/tortanuziale.png" alt="">
+          <div class="col-md-4 col-6 order-md-1 p-2">
+            <img
+              src="images/simo_e_leo-57.webp"
+              alt=""
+              class="galleria img-fluid"
+            />
           </div>
-          <h2 class="mt-5 font55 c-000 text-break">Ricevimento</h2>
-          <p class="wightThin font20 m-0 c-5E254E">Valle di Badia</p>
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="images/geolocalizzasingolo.png" alt="" class="geolocalizzasingolo">
-            <a href="https://www.google.com/maps/place/Via+di+Badia,+24,+56032+Buti+PI/@43.7342008,10.6064455,17z/data=!3m1!4b1!4m6!3m5!1s0x12d589a915d0bbb3:0x2bf99295e30e0e64!8m2!3d43.7342008!4d10.6086342!16s%2Fg%2F11jyn3tnl7">
-              <p class="m-0 ms-2 wightThin">Via di Badia, 24, 56032 Buti PI</p>
-            </a>
+          <div class="col-md-4 col-6 order-md-2 p-2">
+            <img
+              src="images/simo_e_leo-22.webp"
+              alt=""
+              class="galleria img-fluid"
+            />
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bg-E9E1DE pt-5 pb-5" id="gallery">
-  <div class="container ">
-    <div class="row ">
-      <div class="col-12 text-center p-3">
-        <h1 class="text-break">La nostra parte di vita insieme.</h1>
-      </div>
-      <div class="col-md-4 col-6 order-md-0 p-2">
-        <img src="images/simo_e_leo-09.webp" alt="" class="galleria img-fluid">
-      </div>
-      <div class="col-md-4 col-6 order-md-1 p-2">
-        <img src="images/simo_e_leo-57.webp" alt="" class="galleria img-fluid">
-      </div>
-      <div class="col-md-4 col-6 order-md-2 p-2">
-        <img src="images/simo_e_leo-22.webp" alt="" class="galleria img-fluid">
-      </div>
-      <div
-          class="col-md-4 col-6 bg-volti d-flex flex-column align-items-center position-relative justify-content-center  order-md-4 p-2">
-        <img src="images/volti.png" alt="" class="img-fluid volti">
-        <p class="text-center font30 c-5E254E">Ogni vostro augurio è un grande dono</p>
-        <div class="icoAuguri">
-          <img src="images/letteraauguri.png" alt="" class="img-fluid letteraAuguri" onclick="clickAuguri()">
-        </div>
-      </div>
-      <div class="col-md-4 col-6 order-md-3 p-2">
-        <img src="images/simo_e_leo-32.webp" alt="" class="galleria img-fluid">
-      </div>
-      <div class="col-md-4 col-6 order-md-5 p-2">
-        <img src="images/simo_e_leo-20.webp" alt="" class="galleria img-fluid">
-      </div>
-      <!-- <div class="col-6 p-3 d-flex align-items-center position-relative">
+          <div
+            class="col-md-4 col-6 bg-volti d-flex flex-column align-items-center position-relative justify-content-center order-md-4 p-2"
+          >
+            <img src="images/volti.png" alt="" class="img-fluid volti" />
+            <p class="text-center font30 c-5E254E">
+              Ogni vostro augurio è un grande dono
+            </p>
+            <div class="icoAuguri">
+              <img
+                src="images/letteraauguri.png"
+                alt=""
+                class="img-fluid letteraAuguri"
+                onclick="clickAuguri()"
+              />
+            </div>
+          </div>
+          <div class="col-md-4 col-6 order-md-3 p-2">
+            <img
+              src="images/simo_e_leo-32.webp"
+              alt=""
+              class="galleria img-fluid"
+            />
+          </div>
+          <div class="col-md-4 col-6 order-md-5 p-2">
+            <img
+              src="images/simo_e_leo-20.webp"
+              alt=""
+              class="galleria img-fluid"
+            />
+          </div>
+          <!-- <div class="col-6 p-3 d-flex align-items-center position-relative">
       <p class="">Ci vorrei mettere un bottone per gli auguri</p>
       <img src="images/cuorecontinuo.png" alt="" class="cuorecontinuo">
     </div> -->
-      <!-- <div class="col-6">
+          <!-- <div class="col-6">
       <img src="images/esgalleria.png" alt="" class="galleria img-fluid">
     </div> -->
-    </div>
-    <div class="row d-none pt-5" id="form-auguri">
-      <div class="col">
-        <form x-data="formAuguri" @submit.prevent="submit">
-          <div class="row mb-3">
-            <label for="nome" class="col-sm-2 col-form-label">Nome e Cognome</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" x-model="nome" id="nome">
-            </div>
-          </div>
-          <div class="row mb-3">
-            <label for="messaggio" class="col-sm-2 col-form-label">Messaggio di auguri</label>
-            <div class="col-sm-10">
-                  <textarea name="name" rows="8" cols="80" x-model="messaggio" id="messaggio" class="form-control">
-                  </textarea>
-            </div>
-          </div>
-          <div class="row ">
-            <div class="text-end">
-              <button type="submit" class="btn">Invia</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Lista Nozze -->
-<div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze" x-data>
-  <div class="container ">
-    <div class="row">
-      <div class="col-12 text-center p-5">
-        <h1 class="text-break">Lista di nozze </h1>
-        <img src="images/aereo.png" alt="" class="aereo img-fluid">
-      </div>
-      <template x-for="weddingList in $store.weddingLists.data" :key="weddingList.id">
-          <div class="col-sm-3 col-12 bg-faf6f7">
-            <a :href="weddingList.form" target="_blank" class="link-lista">
-            <div class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center">
-              <div class="col-sm-12 col-8 p-3">
-                <div class="">
-                  <img :src="weddingList.immagine" alt="" class="img-fluid">
-                </div>
-                <div class=" bg-D6C4C0 p-3 text-center">
-                  <h2 class="pt-4 font45 c-000 text-break" x-text="weddingList.titolo"></h2>
-                  <p class="c-5E254E" x-html="weddingList.sottotitolo"></p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-4">
-                <div class="icoListaContainer text-center mt-3 mb-3">
-                  <img :src="weddingList.icona" alt="">
-                </div>
-              </div>
-            </div>
-          </a>
-          </div>
-      </template>
-    </div>
-  </div>
-</div>
-
-<!-- RSVP -->
-<div class="bg-E9E1DE pt-5 pb-5" id="rsvp">
-  <div class="container  pb-5 pt-5 rsvp">
-    <div class="row">
-      <div class="col-10 offset-1 bg-faf6f7 p-5">
-        <div class="row">
-          <div class="col bg-lista bg-sl-lista">
-            <h1 class="pb-5 text-center text-break">RSVP</h1>
-            <form x-data="formRsvp" @submit.prevent="submit">
+        </div>
+        <div class="row d-none pt-5" id="form-auguri">
+          <div class="col">
+            <form x-data="formAuguri" @submit.prevent="submit">
               <div class="row mb-3">
-                <label for="inputNome" class="col-sm-2 col-form-label text-break">Nome e Cognome</label>
+                <label for="nome" class="col-sm-2 col-form-label"
+                  >Nome e Cognome</label
+                >
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputNome" x-model="nome" required>
-                  <div class="invalid-feedback">
-                    Campo obbligatorio
-                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    x-model="nome"
+                    id="nome"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputEmail" class="col-sm-2 col-form-label text-break">Email</label>
+                <label for="messaggio" class="col-sm-2 col-form-label"
+                  >Messaggio di auguri</label
+                >
                 <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail" x-model="email" required>
-                  <div class="invalid-feedback">
-                    Campo obbligatorio
-                  </div>
-
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputTel" class="col-sm-2 col-form-label text-break">Telefono</label>
-                <div class="col-sm-10">
-                  <input type="tel" class="form-control" id="inputTel" x-model="telefono" required>
-                  <div class="invalid-feedback">
-                    Campo obbligatorio
-                  </div>
-
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="conchi" class="col-sm-2 col-form-label text-break">Chi verrà insieme a te?</label>
-                <div class="col-sm-10">
-                  <textarea name="name" rows="8" cols="80" x-model="conchi" id="conchi" class="form-control">
+                  <textarea
+                    name="name"
+                    rows="8"
+                    cols="80"
+                    x-model="messaggio"
+                    id="messaggio"
+                    class="form-control"
+                  >
                   </textarea>
                 </div>
               </div>
-              <div class="row mb-3">
-                <label for="intolleranze" class="col-sm-2 col-form-label text-break">Eventuali Intolleranze/Allergie/Preferenze</label>
-                <div class="col-sm-10">
-                  <textarea name="name" rows="8" cols="80" x-model="intolleranze" id="intolleranze" class="form-control">
-                  </textarea>
-                </div>
-              </div>
-              <fieldset class="row mb-3">
-                <legend class="col-form-label col-sm-2 pt-0">Conferma</legend>
-                <div class="col-sm-10 d-flex">
-                  <div class="form-check me-3">
-                    <input class="form-check-input" type="radio" name="conferma" id="confermaSi"
-                           value="SI" x-model="conferma">
-                    <label class="form-check-label" for="confermaSi">
-                      Si
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="conferma" id="confermaNo"
-                           value="NO" x-model="conferma">
-                    <label class="form-check-label" for="confermaNo">
-                      No
-                    </label>
-                  </div>
-                  <div class="invalid-feedback">
-                    Campo obbligatorio
-                  </div>
-
-                </div>
-              </fieldset>
-              <div class="row ">
+              <div class="row">
                 <div class="text-end">
                   <button type="submit" class="btn">Invia</button>
                 </div>
-                <div class="valid-feedback">
-                  Messaggio inviato con successo
-                </div>
-                <div class="invalid-feedback">
-                  Controlla i campi
-                </div>
-
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Storyboard -->
-<div class="bg-E9E1DE pt-5 pb-5" id="storyboard">
-  <div class="container  pb-5">
-    <div class="row pb-5">
-      <div class="col-12 text-center p-5">
-        <img src="images/storyboard.png" alt="" class="storyboard img-fluid">
-      </div>
-      <div class="col-10 offset-1 bg-faf6f7 p-5">
-        <div class="position-relative">
-          <h1 class="text-center mb-3 text-break">Storyboard</h1>
-          <p class="pb-3 text-break">
-            I ricordi di questo giorno <i class="fa-solid fa-heart"></i> ...vorremmo portarli tutti con noi!
-            Sul sito https://wetransfer.com/,
-            puoi caricare le tue foto (/video) inserendo come indirizzo email del mittente,
-            il tuo indirizzo e come indirizzo del destinatario, l'indirizzo leonardoesimona@el-giorno-gioviale.it:
-            sarà bello guardarle, riguardarle e rivederle ancora... anche fino allo sfinimento :)
-          </p>
-          <a href="mailto:leonardoesimona@el-giorno-gioviale.it"
-             class="c-5E254E text-break">leonardoesimona@el-giorno-gioviale.it</a>
-          <div class="text-center icoListaContainer mt-4">
-            <img src="images/macchinafotografica.png" alt="" class=" ">
+    <!-- Lista Nozze -->
+    <div class="bg-E9E1DE pt-5 pb-5" id="lista-nozze" x-data>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center p-5">
+            <h1 class="text-break">Lista di nozze</h1>
+            <img src="images/aereo.png" alt="" class="aereo img-fluid" />
           </div>
-          <div class="negativi-container">
-            <img src="images/negativi.png" alt="" class=" ">
+          <template
+            x-for="weddingList in $store.weddingLists.data"
+            :key="weddingList.id"
+          >
+            <div class="col-sm-3 col-12 bg-faf6f7">
+              <a :href="weddingList.form" target="_blank" class="link-lista">
+                <div
+                  class="row bg-timbri bg-lista d-flex flex-sm-column flex-row align-items-center"
+                >
+                  <div class="col-sm-12 col-8 p-3">
+                    <div class="">
+                      <img
+                        :src="weddingList.immagine"
+                        alt=""
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="bg-D6C4C0 p-3 text-center">
+                      <h2
+                        class="pt-4 font45 c-000 text-break"
+                        x-text="weddingList.titolo"
+                      ></h2>
+                      <p class="c-5E254E" x-html="weddingList.sottotitolo"></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-4">
+                    <div class="icoListaContainer text-center mt-3 mb-3">
+                      <img :src="weddingList.icona" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP -->
+    <div class="bg-E9E1DE pt-5 pb-5" id="rsvp">
+      <div class="container pb-5 pt-5 rsvp">
+        <div class="row">
+          <div class="col-10 offset-1 bg-faf6f7 p-5">
+            <div class="row">
+              <div class="col bg-lista bg-sl-lista">
+                <h1 class="pb-5 text-center text-break">RSVP</h1>
+                <form x-data="formRsvp" @submit.prevent="submit">
+                  <div class="row mb-3">
+                    <label
+                      for="inputNome"
+                      class="col-sm-2 col-form-label text-break"
+                      >Nome e Cognome</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputNome"
+                        x-model="nome"
+                        required
+                      />
+                      <div class="invalid-feedback">Campo obbligatorio</div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      for="inputEmail"
+                      class="col-sm-2 col-form-label text-break"
+                      >Email</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="inputEmail"
+                        x-model="email"
+                        required
+                      />
+                      <div class="invalid-feedback">Campo obbligatorio</div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      for="inputTel"
+                      class="col-sm-2 col-form-label text-break"
+                      >Telefono</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="inputTel"
+                        x-model="telefono"
+                        required
+                      />
+                      <div class="invalid-feedback">Campo obbligatorio</div>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      for="conchi"
+                      class="col-sm-2 col-form-label text-break"
+                      >Chi verrà insieme a te?</label
+                    >
+                    <div class="col-sm-10">
+                      <textarea
+                        name="name"
+                        rows="8"
+                        cols="80"
+                        x-model="conchi"
+                        id="conchi"
+                        class="form-control"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label
+                      for="intolleranze"
+                      class="col-sm-2 col-form-label text-break"
+                      >Eventuali Intolleranze/Allergie/Preferenze</label
+                    >
+                    <div class="col-sm-10">
+                      <textarea
+                        name="name"
+                        rows="8"
+                        cols="80"
+                        x-model="intolleranze"
+                        id="intolleranze"
+                        class="form-control"
+                      >
+                      </textarea>
+                    </div>
+                  </div>
+                  <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">
+                      Conferma
+                    </legend>
+                    <div class="col-sm-10 d-flex">
+                      <div class="form-check me-3">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="conferma"
+                          id="confermaSi"
+                          value="SI"
+                          x-model="conferma"
+                        />
+                        <label class="form-check-label" for="confermaSi">
+                          Si
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="conferma"
+                          id="confermaNo"
+                          value="NO"
+                          x-model="conferma"
+                        />
+                        <label class="form-check-label" for="confermaNo">
+                          No
+                        </label>
+                      </div>
+                      <div class="invalid-feedback">Campo obbligatorio</div>
+                    </div>
+                  </fieldset>
+                  <div class="row">
+                    <div class="text-end">
+                      <button type="submit" class="btn">Invia</button>
+                    </div>
+                    <div class="valid-feedback">
+                      Messaggio inviato con successo
+                    </div>
+                    <div class="invalid-feedback">Controlla i campi</div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Footer -->
-<footer class="bg-faf6f7">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="bg-lista bg-sl-lista">
-          <h2 class="text-center m-0">Grazie <br>Simona e Leonardo</h2>
+    <!-- Storyboard -->
+    <div class="bg-E9E1DE pt-5 pb-5" id="storyboard">
+      <div class="container pb-5">
+        <div class="row pb-5">
+          <div class="col-12 text-center p-5">
+            <img
+              src="images/storyboard.png"
+              alt=""
+              class="storyboard img-fluid"
+            />
+          </div>
+          <div class="col-10 offset-1 bg-faf6f7 p-5">
+            <div class="position-relative">
+              <h1 class="text-center mb-3 text-break">Storyboard</h1>
+              <p class="pb-3 text-break">
+                I ricordi di questo giorno
+                <i class="fa-solid fa-heart"></i> ...vorremmo portarli tutti con
+                noi!<br />
+                Sul sito
+                <a href="https://wetransfer.com">https://wetransfer.com</a>,
+                potrai condividere con noi le tue foto (o video): inserisci
+                l'indirizzo
+                <a href="mailto:leonardoesimona@el-giorno-gioviale.it"
+                  >leonardoesimona@el-giorno-gioviale.it</a
+                >
+                (come destinatario) e la tua mail, come indirizzo del
+                mittente.<br />
+                Puoi anche inviare le foto direttamente tramite mail, allo
+                stesso indirizzo:
+                <a href="mailto:leonardoesimona@el-giorno-gioviale.it"
+                  >leonardoesimona@el-giorno-gioviale.it</a
+                >
+              </p>
+              <div class="text-center icoListaContainer mt-4">
+                <img src="images/macchinafotografica.png" alt="" class=" " />
+              </div>
+              <div class="negativi-container">
+                <img src="images/negativi.png" alt="" class=" " />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 
-
-</body>
+    <!-- Footer -->
+    <footer class="bg-faf6f7">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="bg-lista bg-sl-lista">
+              <h2 class="text-center m-0">Grazie <br />Simona e Leonardo</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
