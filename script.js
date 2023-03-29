@@ -68,26 +68,6 @@ window.addEventListener('scroll', () => {
 //
 const API_URL = "https://www.el-giorno-gioviale.it";
 
-function decodeEntity(inputStr) {
-  var textarea = document.createElement("textarea");
-  textarea.innerHTML = inputStr;
-  return textarea.value;
-}
-
-async function getLists() {
-  const json = await (
-    await fetch(`${API_URL}/wp-json/wp/v2/wedding-lists?acf_format=standard&_embed&per_page=100`)
-  ).json();
-  return json.map((list) => ({
-    id: list.id,
-    titolo: decodeEntity(list.title.rendered),
-    sottotitolo: list.acf.sottotitolo,
-    icona: list.acf.icona,
-    form: list.acf.form,
-    immagine: list._embedded['wp:featuredmedia']['0'].source_url,
-  }));
-}
-
 // Risposta OK
 // {
 //   "contact_form_id": 8,
@@ -97,68 +77,101 @@ async function getLists() {
 //   "into": "#",
 //   "invalid_fields": []
 // }
+async function submitContactForm(baseUrl, cf7Id, dataObj) {
+  // Genero l'endpoint
+  const endpoint = `${baseUrl}/wp-json/contact-form-7/v1/contact-forms/${cf7Id}/feedback`;
 
-async function submitRsvp({
-                            nome,
-                            email,
-                            telefono,
-                            conchi,
-                            intolleranze,
-                            conferma
-                          }) {
-  const RSVP_ENDPOINT = `${API_URL}/wp-json/contact-form-7/v1/contact-forms/8/feedback`;
-  const formdata = new FormData();
-  formdata.append("your-name", nome);
-  formdata.append("your-email", email);
-  formdata.append("your-tel", telefono);
-  formdata.append("your-conchi", conchi);
-  formdata.append("your-intolleranze", intolleranze);
-  formdata.append("your-conferma", conferma);
+  // Creo i dati della form
+  const formData = new FormData();
+  for (const [key, value] of Object.entries(dataObj)) {
+    formData.append(key, value);
+  }
 
-  const cf7Response = await (
-    await fetch(
-      RSVP_ENDPOINT,
-      {
-        method: "POST",
-        body: formdata,
-      }
-    )
-  ).json();
+  // Mando la richiesta
+  const response = await fetch(endpoint, {
+    method: 'post',
+    body: formData
+  });
+  const json = await response.json();
 
-  if (cf7Response?.status === 'mail_sent') {
-    return cf7Response?.message;
-  } else {
-    throw new Error(cf7Response.message);
+  if (json.status) {
+    if (json.status === 'validation_failed') { // Validazione Fallita
+      throw new Error(json.message);
+      /*
+      json.invalid_fields.map(field => {
+        return {
+          campo: field.field,
+          messaggio: field.message,
+        }
+      })
+      */
+    } else if (json.status === 'mail_sent') { // Mail inviata
+      return json?.message;
+    }
   }
 }
 
-async function submitAuguri({nome, messaggio}) {
-  const AUGURI_ENDPOINT = `${API_URL}/wp-json/contact-form-7/v1/contact-forms/5/feedback`;
-  const formdata = new FormData();
-  formdata.append("your-name", nome);
-  formdata.append("your-messaggio", messaggio);
-
-  return await (
-    await fetch(
-      AUGURI_ENDPOINT,
-      {
-        method: "POST",
-        body: formdata,
-      }
-    )
-  ).json();
-}
-
 document.addEventListener("alpine:init", () => {
-  Alpine.store("weddingLists", {
-    data: [],
-    init() {
-      getLists().then((data) => {
-        console.log(data);
-        this.data = data;
-      });
+
+  Alpine.data('weddingListView', () => ({
+    data: JSON.stringify({
+      query: `
+        query weddingListQuery {
+          weddingLists(where: {orderby: {field: POSIZIONE, order: ASC}, status: PUBLISH}) {
+            nodes {
+              title
+              groupWeddingList {
+                form
+                sottotitolo
+                posizione
+                icona {
+                  sourceUrl
+                }
+              }
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              id
+            }
+          }
+        }
+      `
+    }),
+    result: '',
+    weddingLists: [],
+
+    parseWeddingListResponse(data) {
+      return data.weddingLists.nodes.map(weddingList => ({
+        id: weddingList.id,
+        titolo: weddingList.title,
+        sottotitolo: weddingList.groupWeddingList.sottotitolo,
+        form: weddingList.groupWeddingList.form,
+        immagine: weddingList.featuredImage.node.sourceUrl,
+        icona: weddingList.groupWeddingList.icona.sourceUrl,
+        posizione: weddingList.groupWeddingList.posizione,
+      }));
     },
-  });
+
+    init() {
+      this.result = 'Caricamento...';
+      fetch(`${API_URL}/wp/graphql`, {
+        method: 'post',
+        body: this.data,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+        .then(response => response.json())
+        .then(result => {
+          if (result.errors && result.errors.length > 0) {
+            this.result = result.errors.map(e => e.message).join('\n');
+          }
+          this.weddingLists = this.parseWeddingListResponse(result.data);
+        });
+    }
+  }));
 
   Alpine.data("formRsvp", () => ({
     nome: '',
@@ -166,22 +179,38 @@ document.addEventListener("alpine:init", () => {
     telefono: '',
     conchi: '',
     intolleranze: '',
-    conferma: "",
+    conferma: '',
     msg: '',
     msgErr: '',
+    clear() {
+      this.nome = '';
+      this.email = '';
+      this.telefono = '';
+      this.conchi = '';
+      this.intolleranze = '';
+      this.conferma = "";
+    },
     submit() {
-      submitRsvp({
-        nome: this.nome,
-        email: this.email,
-        telefono: this.telefono,
-        conchi: this.conchi,
-        intolleranze: this.intolleranze,
-        conferma: this.conferma,
-      }).then(msg => {
-        this.msg = msg;
-      }, (msgErr => {
-        this.msgErr = msgErr;
-      }));
+      // Aggiungo la classe di validazione
+      this.$refs.formElem.classList.add('was-validated');
+
+      if (this.$refs.formElem.checkValidity()) {
+        // Creo la funzione per gestire la richiesta
+        const submitRsvp = (data) => submitContactForm(API_URL, 8, data);
+        submitRsvp({
+          'your-name': this.nome,
+          'your-email': this.email,
+          'your-tel': this.telefono,
+          'your-conchi': this.conchi,
+          'your-intolleranze': this.intolleranze,
+          'your-conferma': this.conferma,
+        }).then(msg => {
+          this.msg = msg;
+          this.clear();
+        }, (msgErr => {
+          this.msgErr = msgErr;
+        }));
+      }
     },
   }));
 
@@ -190,13 +219,23 @@ document.addEventListener("alpine:init", () => {
     nome: "",
     messaggio: "",
     msg: "",
+    msgErr: '',
+    clear() {
+      this.nome = "";
+      this.messaggio = "";
+    },
     submit() {
-      submitRsvp({
-        nome: this.nome,
-        messaggio: this.messaggio
-      }).then((auguriResp) => {
-        this.msg = auguriResp.message;
-      });
+      // Creo la funzione per gestire la richiesta
+      const submitAuguri = (data) => submitContactForm(API_URL, 5, data);
+      submitAuguri({
+        'your-name': this.nome,
+        'your-messaggio': this.messaggio
+      }).then(msg => {
+        this.msg = msg;
+        this.clear();
+      }, (msgErr => {
+        this.msgErr = msgErr;
+      }));
     },
   }));
 });
