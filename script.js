@@ -40,6 +40,7 @@ const x = setInterval(function () {
 function clickAuguri() {
   const element = document.getElementById("form-auguri");
   element.classList.toggle("d-none");
+  element.scrollIntoView();
 }
 
 
@@ -189,6 +190,8 @@ document.addEventListener("alpine:init", () => {
       this.conchi = '';
       this.intolleranze = '';
       this.conferma = "";
+      // Rimuovo la classe di validazione
+      this.$refs.formElem.classList.remove('was-validated');
     },
     submit() {
       // Aggiungo la classe di validazione
@@ -223,19 +226,26 @@ document.addEventListener("alpine:init", () => {
     clear() {
       this.nome = "";
       this.messaggio = "";
+      // Rimuovo la classe di validazione
+      this.$refs.formElem.classList.remove('was-validated');
     },
     submit() {
-      // Creo la funzione per gestire la richiesta
-      const submitAuguri = (data) => submitContactForm(API_URL, 5, data);
-      submitAuguri({
-        'your-name': this.nome,
-        'your-messaggio': this.messaggio
-      }).then(msg => {
-        this.msg = msg;
-        this.clear();
-      }, (msgErr => {
-        this.msgErr = msgErr;
-      }));
+      // Aggiungo la classe di validazione
+      this.$refs.formElem.classList.add('was-validated');
+
+      if (this.$refs.formElem.checkValidity()) {
+        // Creo la funzione per gestire la richiesta
+        const submitAuguri = (data) => submitContactForm(API_URL, 5, data);
+        submitAuguri({
+          'your-name': this.nome,
+          'your-messaggio': this.messaggio
+        }).then(msg => {
+          this.msg = msg;
+          this.clear();
+        }, (msgErr => {
+          this.msgErr = msgErr;
+        }));
+      }
     },
   }));
 });
