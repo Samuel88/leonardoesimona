@@ -254,6 +254,13 @@ document.addEventListener("alpine:init", () => {
 document.addEventListener('click', function (event) {
   const menu = document.querySelector('.navbar-collapse');
 
+  // chiude il menu se si fa clic su un elemento del menu
+  if (event.target.closest('.navbar-collapse.show a')) {
+    menu.classList.remove('show');
+    return;
+  }
+
+  // chiude il menu se si fa clic fuori dal menu
   if (menu.classList.contains('show') && !menu.contains(event.target)) {
     menu.classList.remove('show');
   }
