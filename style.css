@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;900&display=swap");
 
 @font-face {
-  src: url("fonts/blindlight.regular.ttf");
+  src: url("/fonts/blindlight.regular.ttf");
   font-weight: normal;
   font-family: "Blindlight";
+  src: url('/fonts/blindlight.regular.ttf'); /* IE9 Compat Modes */
+  src: url('/fonts/blindlight.regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/blindlight.regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/blindlight.regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/blindlight.regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 /* GENERAL */
@@ -14,6 +19,7 @@ body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif !important;
   color: #000 !important;
+  -webkit-text-size-adjust: 100%!important;
 }
 
 .bg-D6C4C0 {
@@ -123,18 +129,17 @@ h1.hp-title span{
   color: #fff !important;
   font-size: 15vw;
 }
+div#countdown>div {
+  border-right: 2px solid #5e254e;
+}
+
+div#countdown>div:last-child {
+  border: none
+}
 
 @media (min-width: 576px) {
   .hp-title {
     font-size: 5vw;
-  }
-
-  div#countdown>div {
-    border-right: 2px solid #5e254e;
-  }
-
-  div#countdown>div:last-child {
-    border: none
   }
 
 }
@@ -308,7 +313,7 @@ img.storyboard {
   position: absolute;
   width: 100px;
   bottom: -20px;
-  right: -20px;
+  right: -50px;
 }
 
 .negativi-container img {
@@ -348,10 +353,16 @@ footer .bg-sl-lista {
   .weddingList-titolo {
     min-height: 132px;
   }
+
   img.aereo,
-  img.storyboard, img.geolocalizzazione {
+  img.storyboard,
+  img.geolocalizzazione {
     max-width: 400px;
   }
+  .negativi-container {
+    right: -70px;
+  }
+
 
 
 }
